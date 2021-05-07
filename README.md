@@ -42,4 +42,4 @@ Done!
 
 #### Next Steps
 * You can download a GUI to query the data such as [pgAdmin](https://www.pgadmin.org/download/) for Linux/Windows or [Postico](https://eggerapps.at/postico/) for Mac
-* Or you can connect using Python [psycopg2] (https://pypi.org/project/psycopg2/)
+* Or you can connect to your postgres server using Python through [psycopg2](https://pypi.org/project/psycopg2/)
