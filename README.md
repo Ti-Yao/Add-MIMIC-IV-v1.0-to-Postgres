@@ -26,21 +26,25 @@ or http://www.postgresql.org/download/ (Any Operating System incl Windows)
 ```
 sudo -u postgres psql # enter into postgres
 
-# in postgres
+# in postgres pay attention to the semicolons!
 ALTER USER postgres PASSWORD 'myPassword'; # create password
-CREATE DATABASE mimiciv; # create database called mimiciv,remember to use the semicolons!
+#ALTER ROLE
+CREATE DATABASE mimiciv; # create database called mimiciv
+#CREATE DATABASE
 \c mimiciv # connect to database
-CREATE SCHEMA mimiciv; # create schema
+#you are now connected to database "mimiciv" as user "postgres"
+CREATE SCHEMA mimiciv; 
+# CREATE SCHEMA
 \q # quit
 ```
 
 #### 4 Load data into postgres
 ```
 cd /folder/containing/data/and/scripts
-psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f create_tables.sql     # create tables 
-psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f load_data.sql         # load MIMIC data into tables. This may take a while
-psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f add_indexes.sql       # add indexes to table, makes querying faster(optional but recommended)  
-psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f postgres_check.sql    # check that all the data has been loaded in (optional but recommended) 
+psql -U postgres -h 127.0.0.1 -f create_tables.sql 'dbname=mimiciv options=--search_path=mimiciv password = myPassword'      # create tables 
+psql -U postgres -h 127.0.0.1  -f load_data.sql 'dbname=mimiciv options=--search_path=mimiciv password = myPassword'         # load MIMIC data into tables. This may take a while
+psql -U postgres -h 127.0.0.1 -f add_indexes.sql 'dbname=mimiciv options=--search_path=mimiciv password = myPassword'        # add indexes to table, makes querying faster(optional but recommended)  
+psql -U postgres -h 127.0.0.1 -f postgres_check.sql 'dbname=mimiciv options=--search_path=mimiciv password = myPassword'     # check that all the data has been loaded in (optional but recommended) 
 ```
 Done!
 
