@@ -38,7 +38,7 @@ CREATE SCHEMA mimiciv; # create schema
 ```
 cd /folder/containing/data/and/scripts
 psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f create_tables.sql     # create tables 
-psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f load_data.sql         # load MIMIC data into tables
+psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f load_data.sql         # load MIMIC data into tables. This may take a while
 psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f add_indexes.sql       # add indexes to table, makes querying faster(optional but recommended)  
 psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f postgres_check.sql    # check that all the data has been loaded in (optional but recommended) 
 ```
