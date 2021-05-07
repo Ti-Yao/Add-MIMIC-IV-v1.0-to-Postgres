@@ -24,20 +24,23 @@ or http://www.postgresql.org/download/ (Any Operating System incl Windows)
 #### 3 Create a user, database and schema in Postgres
 
 ```
-createuser -P -s -e -d mimicuser
-psql -U mimicuser -d mimiciv
-\c mimiciv
-CREATE SCHEMA mimiciv;
-\q
+sudo -u postgres psql # enter into postgres
+
+# in postgres
+ALTER USER postgres PASSWORD 'myPassword'; # create password
+CREATE DATABASE mimiciv; # create database called mimiciv,remember to use the semicolons!
+\c mimiciv # connect to database
+CREATE SCHEMA mimiciv; # create schema
+\q # quit
 ```
 
 #### 4 Load data into postgres
 ```
 cd /folder/containing/data/and/scripts
-psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f create_tables.sql     # create tables 
-psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f load_data.sql         # load MIMIC data into tables
-psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f add_indexes.sql       # add indexes to table, makes querying faster(optional but recommended)
-psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f postgres_check.sql    # check that all the data has been loaded in (optional but recommended)
+psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f create_tables.sql     # create tables 
+psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f load_data.sql         # load MIMIC data into tables
+psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f add_indexes.sql       # add indexes to table, makes querying faster(optional but recommended)  
+psql -U postgres -h 127.0.0.1 'dbname=mimiciv options=--search_path=mimiciv password = myPassword' -f postgres_check.sql    # check that all the data has been loaded in (optional but recommended) 
 ```
 Done!
 
