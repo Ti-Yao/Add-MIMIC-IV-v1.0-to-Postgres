@@ -31,11 +31,8 @@ CREATE SCHEMA mimiciv;
 In terminal:
 ```
 cd /folder/containing/data/and/scripts
-psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f create_tables.sql 
-psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f load_data.sql
-psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f add_indexes.sql
+psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f create_tables.sql     # create tables 
+psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f load_data.sql         # load MIMIC data into tables
+psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f add_indexes.sql       # add indexes to table, makes querying faster(optional but recommended)
+psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f postgres_check.sql    # check that all the data has been loaded in (optional but recommended)
 ```
-Done!
-
-#### Working with postgres
-* 
