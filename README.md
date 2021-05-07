@@ -16,14 +16,16 @@ This code is adapted from https://mimic.physionet.org/tutorials/
 
 #### 2 Install Postgres
 ```
+# In terminal:
 sudo apt-get install postgresql # (Linux)
 brew install postgres           # (Mac OS)
 ```
 or http://www.postgresql.org/download/ (Any Operating System incl Windows)
 
 #### 3 Create a user, database and schema in Postgres
-In terminal:
+
 ```
+
 createuser -P -s -e -d mimicuser
 psql -U mimicuser -d mimiciv
 \c mimiciv
@@ -32,8 +34,8 @@ CREATE SCHEMA mimiciv;
 ```
 
 #### 4 Load data into postgres
-In terminal:
 ```
+# In terminal:
 cd /folder/containing/data/and/scripts
 psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f create_tables.sql     # create tables 
 psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f load_data.sql         # load MIMIC data into tables
