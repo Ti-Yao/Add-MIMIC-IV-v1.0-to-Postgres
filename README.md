@@ -15,9 +15,11 @@ This code is adapted from https://mimic.physionet.org/tutorials/
 
 
 #### 2 Install Postgres
-* sudo apt-get install postgresql (Linux)
-* brew install postgres (Mac OS)
-* http://www.postgresql.org/download/ (Any Operating System incl Windows)
+```
+sudo apt-get install postgresql # (Linux)
+brew install postgres           # (Mac OS)
+```
+or http://www.postgresql.org/download/ (Any Operating System incl Windows)
 
 #### 3 Create a user, database and schema in Postgres
 In terminal:
