@@ -1,4 +1,4 @@
-# Add-MIMIC-IV-v1.0-to-Postgres. This code might require tweaking for other versions of MIMIC. 
+# Add MIMIC-IV v1.0 to Postgres
 This code is adapted from https://mimic.physionet.org/tutorials/
 
 #### 0 Checklist
@@ -39,3 +39,7 @@ psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f add_indexe
 psql 'dbname=mimiciv user=mimicuser options=--search_path=mimiciv' -f postgres_check.sql    # check that all the data has been loaded in (optional but recommended)
 ```
 Done!
+
+#### Next Steps
+* You can download a GUI to query the data such as [pgAdmin](https://www.pgadmin.org/download/) for Linux/Windows or [Postico](https://eggerapps.at/postico/) for Mac
+* Or you can connect using Python [psycopg2] (https://pypi.org/project/psycopg2/)
