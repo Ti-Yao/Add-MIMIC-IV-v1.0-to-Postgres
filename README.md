@@ -46,6 +46,8 @@ psql -U postgres -h 127.0.0.1  -f load_data.sql 'dbname=mimiciv options=--search
 psql -U postgres -h 127.0.0.1 -f add_indexes.sql 'dbname=mimiciv options=--search_path=mimiciv password = myPassword'        # add indexes to table, makes querying faster(optional but recommended)  
 psql -U postgres -h 127.0.0.1 -f postgres_check.sql 'dbname=mimiciv options=--search_path=mimiciv password = myPassword'     # check that all the data has been loaded in (optional but recommended) 
 ```
+file:///home/tina/Pictures/Screenshot%20from%202021-05-11%2015-00-22.png![image](https://user-images.githubusercontent.com/74569724/117828366-a5ecc580-b269-11eb-901c-6c8062068bc5.png)
+
 Done!
 
 #### Next Steps
