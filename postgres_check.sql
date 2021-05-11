@@ -16,7 +16,7 @@ select 'procedures_icd' as tbl, 779625 as row_count UNION ALL
 select 'd_icd_diagnoses' as tbl, 109775 as row_count UNION ALL 
 select 'hcpcsevents' as tbl, 160727 as row_count UNION ALL 
 select 'prescriptions' as tbl, 17008053 as row_count UNION ALL 
-select 'emar_detail' as tbl, 55947923 as row_count UNION ALL 
+select 'emar_detail' as tbl, 55947921 as row_count UNION ALL 
 select 'd_items' as tbl, 3861 as row_count UNION ALL 
 select 'procedureevents' as tbl, 731247 as row_count UNION ALL 
 select 'datetimeevents' as tbl, 7495712 as row_count UNION ALL 
